@@ -1,11 +1,10 @@
-package dayfive_test
+package day05_test
 
 import (
-	"AdventOfCode2024/dayfive"
 	"testing"
 )
 
-var rules = []dayfive.Rule{
+var rules = []day05.Rule{
 	{A: 47, B: 53},
 	{A: 97, B: 13},
 	{A: 97, B: 61},
@@ -40,7 +39,7 @@ var updates = [][]int{
 
 func TestRssult1(t *testing.T) {
 
-	result := dayfive.Rssult1(rules, updates)
+	result := day05.Rssult1(rules, updates)
 
 	if result != 143 {
 		t.Errorf("Expected 143, got %d", result)
@@ -49,7 +48,7 @@ func TestRssult1(t *testing.T) {
 
 func TestRssult2(t *testing.T) {
 
-	result := dayfive.Rssult2(rules, updates)
+	result := day05.Rssult2(rules, updates)
 
 	if result != 123 {
 		t.Errorf("Expected 143, got %d", result)

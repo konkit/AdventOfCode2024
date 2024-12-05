@@ -1,7 +1,6 @@
-package daytwo_test
+package day02_test
 
 import (
-	"AdventOfCode2024/daytwo"
 	"testing"
 )
 
@@ -45,7 +44,7 @@ func TestCheckIfSafe(t *testing.T) {
 
 	for _, tc := range testcase {
 		t.Run(tc.name, func(t *testing.T) {
-			res := daytwo.CheckIfSafe(tc.arr)
+			res := day02.CheckIfSafe(tc.arr)
 			if res != tc.safe {
 				t.Errorf("CheckIfSafe was incorrect, got: %v, want: %v.", tc.arr, tc.safe)
 			}
@@ -93,7 +92,7 @@ func TestCheckIfSafeWithDampener(t *testing.T) {
 
 	for _, tc := range testcase {
 		t.Run(tc.name, func(t *testing.T) {
-			res := daytwo.CheckIfSafeWithDampener(tc.arr)
+			res := day02.CheckIfSafeWithDampener(tc.arr)
 			if res != tc.safe {
 				t.Errorf("CheckIfSafeWithDampener was incorrect, got: %v, want: %v.", tc.arr, tc.safe)
 			}
