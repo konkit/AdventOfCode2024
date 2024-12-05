@@ -1,14 +1,13 @@
 package dayone
 
 import (
+	"AdventOfCode2024/utils"
 	"bufio"
 	"fmt"
 	"log"
 	"os"
 	"sort"
 )
-
-import "golang.org/x/exp/constraints"
 
 func Run() int {
 	arr1, arr2 := readArrays()
@@ -23,7 +22,7 @@ func partOne(arr1 []int, arr2 []int) int {
 
 	size := 0
 	for i := 0; i < len(arr1); i++ {
-		size += Abs(arr1[i] - arr2[i])
+		size += utils.Abs(arr1[i] - arr2[i])
 	}
 
 	return size
@@ -75,11 +74,4 @@ func readArrays() ([]int, []int) {
 		log.Fatal(err)
 	}
 	return arr1, arr2
-}
-
-func Abs[T constraints.Integer](x T) T {
-	if x < 0 {
-		return -x
-	}
-	return x
 }
