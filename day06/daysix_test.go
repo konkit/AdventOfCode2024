@@ -20,3 +20,22 @@ func TestCalculateRoutes(t *testing.T) {
 		t.Errorf("CalculateRoutes() = %v; want 41", res)
 	}
 }
+
+func TestCalculateObstacle(t *testing.T) {
+	lines := []string{
+		"....#.....",
+		".........#",
+		"..........",
+		"..#.......",
+		".......#..",
+		"..........",
+		".#..^.....",
+		"........#.",
+		"#.........",
+		"......#...",
+	}
+	res := CalculateObstacle(lines, 100)
+	if res != 6 {
+		t.Errorf("CalculateObstacle() = %v; want 6", res)
+	}
+}
