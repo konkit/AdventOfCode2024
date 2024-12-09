@@ -1,7 +1,7 @@
 package main
 
-import dayeight "AdventOfCode2024/day08"
+import "AdventOfCode2024/day09"
 
 func main() {
-	dayeight.Run()
+	day09.Run()
 }
