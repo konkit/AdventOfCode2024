@@ -2,9 +2,13 @@ package utils
 
 import (
 	"bufio"
+	"container/list"
+	"fmt"
 	"golang.org/x/exp/constraints"
 	"log"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func Abs[T constraints.Integer](x T) T {
@@ -35,4 +39,27 @@ func ReadLines(filename string) []string {
 		log.Fatal(err)
 	}
 	return lines
+}
+
+func ParseNumbersOnLine(line string) ([]int, error) {
+	var res []int
+	numbers := strings.Split(line, " ")
+	for _, a := range numbers {
+		num, err := strconv.Atoi(a)
+		if err != nil {
+			fmt.Printf("Error parsing line %s: %s\n", line, err)
+			return nil, err
+		}
+		res = append(res, num)
+	}
+	return res, nil
+}
+
+func ListAsString(l *list.List) string {
+	str := ""
+	str += "List: "
+	for e := l.Front(); e != nil; e = e.Next() {
+		str += fmt.Sprintf("%v ", e.Value)
+	}
+	return str
 }
