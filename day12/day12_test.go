@@ -16,3 +16,36 @@ func TestCalculatePrice(t *testing.T) {
 		t.Errorf("got %d, want 140", res)
 	}
 }
+
+func TestCalculatePrice2(t *testing.T) {
+	lines := []string{
+		"AAAAAA",
+		"AAABBA",
+		"AAABBA",
+		"ABBAAA",
+		"ABBAAA",
+		"AAAAAA",
+	}
+
+	res := CalculatePrice2(lines)
+
+	if res != 368 {
+		t.Errorf("got %d, want 368", res)
+	}
+}
+
+func TestCalculatePrice22(t *testing.T) {
+	lines := []string{
+		"EEEEE",
+		"EXXXX",
+		"EEEEE",
+		"EXXXX",
+		"EEEEE",
+	}
+
+	res := CalculatePrice2(lines)
+
+	if res != 236 {
+		t.Errorf("got %d, want 236", res)
+	}
+}
